@@ -1,42 +1,22 @@
-# Générateur de certificat de déplacement
 
-## Développer
+To avoid retyping everytime, data will be saved in the brower. 
 
-### Installer le projet
+## Autofill
+This proposed version allows you to pass the fields to be filled in as parameters of the URL, just select the reason and generate your attestation normally.
+What is proposed here is in no way intended to cheat / circumvent anything, but to allow the filling of fixed data more quickly (via bookmark or NFC tag for example).
 
-```console
-git clone https://github.com/LAB-MI/attestation-deplacement-derogatoire-q4-2020.git
-cd attestation-deplacement-derogatoire-q4-2020
-npm i
-npm start
+example url:
 ```
+http://modaresimr.github.io/attestation-deplacement-derogatoire-q4-2020/?firstname=prenom&lastname=nom&birthday=01/01/1970&placeofbirth=Paris&address=1 Avenue de Paris&city=Paris&zipcode=75000
+``` 
 
-## Générer et tester le code de production
-
-### Tester le code de production en local
-
-#### Générer le code de production pour tester que le build fonctionne en entier
-
-```console
-npm run build:dev
-```
-
-#### Tester le code de production en local
-
-```console
-npx serve dist
-```
-
-Et visiter http://localhost:5000
-
-Le code à déployer sera le contenu du dossier `dist`
 
 ## Crédits
 
-Ce projet a été réalisé à partir d'un fork du dépôt [deplacement-covid-19](https://github.com/nesk/deplacement-covid-19) de lui-même réalisé à partir d'un fork du dépôt [covid-19-certificate](https://github.com/nesk/covid-19-certificate) de [Johann Pardanaud](https://github.com/nesk).
+This project was made from a fork of the [deplacement-covid-19](https://github.com/nesk/deplacement-covid-19) repository of itself made from a fork of the [covid-19-certificate](https://github.com/nesk/covid-19-certificate) by [Johann Pardanaud](https://github.com/nesk).
 
-Les projets open source suivants ont été utilisés pour le développement de ce
-service :
+The following open source projects were used for the development of this service:
+
 
 - [PDF-LIB](https://pdf-lib.js.org/)
 - [qrcode](https://github.com/soldair/node-qrcode)

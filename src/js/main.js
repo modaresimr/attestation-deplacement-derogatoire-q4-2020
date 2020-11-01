@@ -6,9 +6,8 @@ import './icons'
 import './check-updates'
 import { prepareForm } from './form-util'
 import { warnFacebookBrowserUserIfNecessary } from './facebook-util'
-import { addVersion } from './util'
+import { addVersion , autoFill } from './util'
 import { createForm } from './form'
-import { autoFill } from './util'
 
 
 warnFacebookBrowserUserIfNecessary()

@@ -38,22 +38,22 @@ export function addVersion (version) {
 export function autoFill () {
   const params = new URLSearchParams(
     window.location.hash.substr(1), // skip the first char (#)
-  );
-  const fields = ['lastname', 'firstname', 'birthday', 'placeofbirth', 'address', 'city', 'zipcode'];
-  
+  )
+  const fields = ['lastname', 'firstname', 'birthday', 'placeofbirth', 'address', 'city', 'zipcode']
+
   function fillField(f) {
     if (params.has(f) === true) {
       document.getElementById('field-' + f).value = params.get(f)
     }
   }
-  fields.forEach(fillField);
+  fields.forEach(fillField)
 
   function checkReason (r) {
     document.getElementById('checkbox-' + r).checked = true
   }
-  params.getAll('reason').forEach(checkReason);
+  params.getAll('reason').forEach(checkReason)
 
-  if(params.has('autogenpdf') === true) {
-    document.getElementById("generate-btn").click();
+  if (params.has('autogenpdf') === true) {
+    document.getElementById('generate-btn').click()
   }
 }

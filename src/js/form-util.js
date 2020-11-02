@@ -117,7 +117,7 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
     event.preventDefault()
     $(this).nextElementSibling.classList.remove('d-none')
   })
-  
+
   $('#generate-btn').addEventListener('click', async (event) => {
     event.preventDefault()
 

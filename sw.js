@@ -52,16 +52,16 @@ self.__precacheManifest = [
     "revision": "624e7a3f5560db68d93eda0129cc2922"
   },
   {
-    "url": "confidentialite.afb88a31.css",
-    "revision": "bf4351eb80fc7e53a681d5a3a0f88d9e"
+    "url": "confidentialite.b11d6896.css",
+    "revision": "e2c4a6ad82fc6d2d3fe67cfe3a24a011"
   },
   {
-    "url": "confidentialite.f267785a.js",
-    "revision": "2cf63b5187844ca3ec9a012e3964550d"
+    "url": "confidentialite.dadf7815.js",
+    "revision": "1b2d73fa75bd426007d797ccb632971c"
   },
   {
     "url": "confidentialite.html",
-    "revision": "b41f07b3c89af00f7a2f796d83ef1432"
+    "revision": "ab4ed3d981c454a13f486c1a24b7a5ad"
   },
   {
     "url": "favicon-16x16.a4687270.png",
@@ -73,7 +73,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "d355b2441bee7dbee6a7928c5d4773e5"
+    "revision": "61d3595a930a06cbe4524ecb00271231"
   },
   {
     "url": "logo_dnum_dark.0fe33c5b.svg",
@@ -84,12 +84,12 @@ self.__precacheManifest = [
     "revision": "3a41bfa41e4671414da29db168c37d66"
   },
   {
-    "url": "main.afb88a31.css",
-    "revision": "c4b191cc85f505b7caea7099528b1ce4"
+    "url": "main.32daa535.js",
+    "revision": "6395df4cebcd1f081721bed186dcf61b"
   },
   {
-    "url": "main.b347fe29.js",
-    "revision": "5b949494940b1695c8e18f77db40febb"
+    "url": "main.b11d6896.css",
+    "revision": "0e19cd68698c3dd0c69d80893a67cbd2"
   },
   {
     "url": "marianne-bold-webfont.1505950c.woff2",
@@ -121,9 +121,9 @@ self.__precacheManifest = [
   },
   {
     "url": "./",
-    "revision": "4d425f2e215048d9f7ea5687387234aa"
+    "revision": "168f601f125aed9f655735708252e437"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("https://modaresimr.github.io/attestation-deplacement-derogatoire-q4-2020//index.html"));
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("https://deplacement.alimodaresi.ir//index.html"));

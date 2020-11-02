@@ -4,7 +4,6 @@ import pdfBase from '../certificate.pdf'
 import { generatePdf } from './pdf-util'
 import { setPreviousFormValue } from './localstorage'
 
-
 const conditions = {
   '#field-firstname': {
     length: 1,
@@ -114,8 +113,8 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
   })
 
   $('.openreason').addEventListener('click', async (event) => {
-	  event.preventDefault()
-	  $(this).find('reasoninfo').toggle()
+    event.preventDefault()
+    $(this).find('reasoninfo').toggle()
 	  
   })
   $('#generate-btn').addEventListener('click', async (event) => {
@@ -134,13 +133,13 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
       return
     }
 
-    
+
     const profile = getProfile(formInputs)
-	const fields = ['lastname', 'firstname', 'birthday', 'placeofbirth', 'address', 'city', 'zipcode']
+    const fields = ['lastname', 'firstname', 'birthday', 'placeofbirth', 'address', 'city', 'zipcode']
 
     fields.forEach(inputName => setPreviousFormValue(inputName, profile[inputName]))
-    setPreviousFormValue('reasons',reasons)
-	
+    setPreviousFormValue('reasons', reasons)
+
     console.log(profile, reasons)
     const pdfBlob = await generatePdf(profile, reasons, pdfBase)
 

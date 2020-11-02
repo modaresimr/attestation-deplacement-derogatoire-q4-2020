@@ -115,7 +115,6 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
   $('.openreason').addEventListener('click', async (event) => {
     event.preventDefault()
     $(this).find('reasoninfo').toggle()
-	  
   })
   $('#generate-btn').addEventListener('click', async (event) => {
     event.preventDefault()
@@ -132,7 +131,6 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
     if (invalid) {
       return
     }
-
 
     const profile = getProfile(formInputs)
     const fields = ['lastname', 'firstname', 'birthday', 'placeofbirth', 'address', 'city', 'zipcode']

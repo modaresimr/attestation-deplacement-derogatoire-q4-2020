@@ -79,18 +79,18 @@ const createReasonField = (reasonData) => {
   const formReason = createElement('div', formReasonAttrs)
   const appendToReason = appendTo(formReason)
   const id = `checkbox-${reasonData.code}`
-  reasons = getPreviousFormValue('reasons').split(', ')
+  const reasons = getPreviousFormValue('reasons').split(', ')
   const inputReasonAttrs = {
     className: 'form-check-input',
     type: 'checkbox',
     id,
     name: 'field-reason',
     value: reasonData.code,
-	checked: reasons.indexOf(reasonData.code)>=0 ? 'checked' : ''
+    checked: reasons.indexOf(reasonData.code) >= 0 ? 'checked' : '',
   }
   const inputReason = createElement('input', inputReasonAttrs)
 
-  const labelAttrs = { innerHTML: '<a href="#" class="openreason">'+ reasonData.code +' <div class="reasoninfo">'+reasonData.label+'</div></a>', className: 'form-checkbox-label', for: id }
+  const labelAttrs = { innerHTML: '<a href="#" class="openreason">' + reasonData.code + ' <div class="reasoninfo">' + reasonData.label + '</div></a>', className: 'form-checkbox-label', for: id }
   const label = createElement('label', labelAttrs)
 
   appendToReason([inputReason, label])

@@ -641,7 +641,12 @@ input[type=number] {
   position: fixed;
   bottom: 1em;
   left: 50%;
+  width: 80%;
   transform: translateX(-50%);
+}
+
+#autourl {
+	word-break: break-all;
 }
 
 .alert-info {

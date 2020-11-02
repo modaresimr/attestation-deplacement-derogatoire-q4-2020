@@ -137,6 +137,11 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
 
     fields.forEach(inputName => setPreviousFormValue(inputName, profile[inputName]))
     setPreviousFormValue('reasons', reasons)
+    
+    window.location.hash = '#' + fields.map(x => x + '=' + profile[x]).join('&') + '&' + reasons.split(', ').map(x => 'reason=' + x).join('&')
+    $('#autourl').attr('href', window.location.href)
+    $('#autourl').html(window.location.href)
+	$('#autourl-alert').classList.remove('d-none')
 
     console.log(profile, reasons)
     const pdfBlob = await generatePdf(profile, reasons, pdfBase)

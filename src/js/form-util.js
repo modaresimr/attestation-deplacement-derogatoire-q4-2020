@@ -145,8 +145,8 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
     setPreviousFormValue('reasons', reasons)
 
     window.location.hash = '#' + fields.map(x => x + '=' + profile[x]).join('&') + '&' + reasons.split(', ').map(x => 'reason=' + x).join('&') + '&autogenpdf=true'
-    $('#autourl').attr('href', window.location.href)
-    $('#autourl').html(window.location.href)
+    $('#autourl').href = window.location.href
+    $('#autourl').innerHTML = window.location.href
     $('#autourl-alert').classList.remove('d-none')
 
     console.log(profile, reasons)

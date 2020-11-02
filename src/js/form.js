@@ -159,5 +159,6 @@ export function createForm () {
     .find(field => field.key === 'reason')
 
   const reasonFieldset = createReasonFieldset(reasonsData)
+  createTitle()
   appendToForm([reasonFieldset, ...formFirstPart])
 }

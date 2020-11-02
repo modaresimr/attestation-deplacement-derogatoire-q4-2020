@@ -2,6 +2,8 @@ import { $, $$, downloadBlob } from './dom-utils'
 import { addSlash, getFormattedDate } from './util'
 import pdfBase from '../certificate.pdf'
 import { generatePdf } from './pdf-util'
+import { setPreviousFormValue } from './localstorage'
+
 
 const conditions = {
   '#field-firstname': {
@@ -111,6 +113,11 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
     })
   })
 
+  $('.openreason').addEventListener('click', async (event) => {
+	  event.preventDefault()
+	  $(this).find('reasoninfo').toggle()
+	  
+  })
   $('#generate-btn').addEventListener('click', async (event) => {
     event.preventDefault()
 
@@ -127,9 +134,13 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
       return
     }
 
-    console.log(getProfile(formInputs), reasons)
-
-    const pdfBlob = await generatePdf(getProfile(formInputs), reasons, pdfBase)
+    
+	const profile = getProfile(formInputs)
+	['address', 'birthday', 'city', 'firstname', 'lastname', 'placeofbirth', 'zipcode',].forEach(inputName => setPreviousFormValue(inputName, profile[inputName]))
+	setPreviousFormValue('reasons',reasons)
+	
+	console.log(profile, reasons)
+    const pdfBlob = await generatePdf(profile, reasons, pdfBase)
 
     const creationInstant = new Date()
     const creationDate = creationInstant.toLocaleDateString('fr-CA')

@@ -41,6 +41,7 @@ export function autoFill () {
   const fields = ['lastname', 'firstname', 'birthday', 'placeofbirth', 'address', 'city', 'zipcode']
 
   function fillField (f) {
+	  console.log(f)
     if (params.has(f) === true) {
       document.getElementById('field-' + f).value = params.get(f)
     }

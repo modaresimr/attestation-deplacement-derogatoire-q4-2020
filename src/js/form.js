@@ -6,6 +6,8 @@ import formData from '../form-data.json'
 
 import { $, appendTo, createElement } from './dom-utils'
 
+import { getPreviousFormValue } from './localstorage'
+
 const createTitle = () => {
   const h2 = createElement('h2', { className: 'titre-2', innerHTML: 'Remplissez en ligne votre déclaration numérique : ' })
   const p = createElement('p', { className: 'msg-info', innerHTML: 'Tous les champs sont obligatoires.' })
@@ -48,6 +50,7 @@ const createFormGroup = ({
     maxlength,
     name,
     pattern,
+    value: getPreviousFormValue(name),
     placeholder,
     required: true,
     type,
@@ -75,18 +78,19 @@ const createReasonField = (reasonData) => {
   const formReasonAttrs = { className: 'form-checkbox align-items-center' }
   const formReason = createElement('div', formReasonAttrs)
   const appendToReason = appendTo(formReason)
-
   const id = `checkbox-${reasonData.code}`
+  reasons = getPreviousFormValue('reasons').split(', ')
   const inputReasonAttrs = {
     className: 'form-check-input',
     type: 'checkbox',
     id,
     name: 'field-reason',
     value: reasonData.code,
+	checked: reasons.indexOf(reasonData.code)>=0 ? 'checked' : ''
   }
   const inputReason = createElement('input', inputReasonAttrs)
 
-  const labelAttrs = { innerHTML: reasonData.label, className: 'form-checkbox-label', for: id }
+  const labelAttrs = { innerHTML: '<a href="#" class="openreason">'+ reasonData.code +' <div class="reasoninfo">'+reasonData.label+'</div></a>', className: 'form-checkbox-label', for: id }
   const label = createElement('label', labelAttrs)
 
   appendToReason([inputReason, label])

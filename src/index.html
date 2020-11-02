@@ -65,7 +65,7 @@
         </p>
 		<form id="form-profile" accept-charset="UTF-8"></form>
         <p class="text-center mt-5">
-            <button type="button" id="generate-btn1" onclick="$('#generate-btn').click()" class="btn btn-primary btn-attestation"><span ><i class="fa fa-file-pdf inline-block mr-1"></i>  Générer mon attestation</span></button>
+            <button type="button" id="generate-btn1" onclick="document.getElementById('generate-btn').click()" class="btn btn-primary btn-attestation"><span ><i class="fa fa-file-pdf inline-block mr-1"></i>  Générer mon attestation</span></button>
         </p>
 
         <div class="bg-primary  d-none" id="snackbar">
@@ -115,7 +115,7 @@
     </div>
 
     <div class="alert alert-secondary d-none" id="autourl-alert">
-        <p>You can copy the bellow url to generate pdf on the fly <a href="#" onclick="$('#autourl-alert').classList.add('d-none')">close</a> </p>
+        <p>You can copy the bellow url to generate pdf on the fly <a href="#" onclick="document.getElementById('autourl-alert').classList.add('d-none')">close</a> </p>
         <p><a href="" id="autourl"></a></p> 
 	</div>
 	

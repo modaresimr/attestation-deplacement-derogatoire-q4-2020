@@ -640,8 +640,8 @@ input[type=number] {
 #autourl-alert {
   position: fixed;
   bottom: 1em;
-  left: 50%;
-  width: 80%;
+  left: 5%;
+  width: 90%;
   transform: translateX(-50%);
 }
 

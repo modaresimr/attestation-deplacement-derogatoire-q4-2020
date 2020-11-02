@@ -116,9 +116,9 @@ const createReasonFieldset = (reasonsData) => {
   const textAlert = createElement('p', textAlertAttrs)
 
   const textSubscribeReasonAttrs = {
-    innerHTML: `certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé en application des 
+    innerHTML: `<a href="#" class="reasonopen">certifie que mon déplacement est pour: </a> <div class="d-none">certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé en application des 
     mesures générales nécessaires pour faire face à l'épidémie de Covid19 dans le cadre de l'état 
-    d'urgence sanitaire <a class="footnote" id="footnote1" href="#footnote1">[1]</a>&nbsp;:`,
+    d'urgence sanitaire <a class="footnote" id="footnote1" href="#footnote1">[1]</a>&nbsp;:</div>`,
   }
 
   const textSubscribeReason = createElement('p', textSubscribeReasonAttrs)

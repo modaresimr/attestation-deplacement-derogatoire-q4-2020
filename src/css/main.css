@@ -588,7 +588,7 @@ input[type=number] {
   border-radius: 3px;
   padding: 16px;
   position: fixed;
-  z-index: 1;
+  z-index: 998;
   left: 50%;
   bottom: 30px;
   font-size: 17px;
@@ -643,6 +643,7 @@ input[type=number] {
   left: 50%;
   width: 90%;
   transform: translateX(-50%);
+  z-index: 997;
 }
 
 #autourl {
@@ -675,4 +676,26 @@ input[type=number] {
 
 .fieldset-error {
   border: 3px solid red;
+}
+
+input[type=checkbox] {
+-ms-transform: scale(2); /* IE */
+ -moz-transform: scale(2); /* FF */
+ -webkit-transform: scale(2); /* Safari and Chrome */
+-o-transform: scale(2); /* Opera */
+}
+
+.reasoninfo {
+    position: fixed;
+    bottom: 1em;
+    left: 50%;
+    width: 90%;
+    transform: translateX(-50%);
+    background: #b9b9b9;
+    z-index: 900;
+}
+
+.form-checkbox {
+    display: inline-table;
+    width: 30%;
 }

@@ -663,8 +663,8 @@ input[type=number] {
 }
 
 .fieldset {
- /* margin-left: -2em;
-  margin-right: -2em;*/
+  margin-left: -1em;
+  margin-right: -1em;
   padding-left: 2em;
   padding-right: 2em;
   border: 3px solid transparent;
@@ -697,7 +697,7 @@ input[type=checkbox] {
 
 .form-checkbox {
     display: inline-table;
-    width: 30%;
+    width: 47%;
     margin-left: 3%;
 }
 

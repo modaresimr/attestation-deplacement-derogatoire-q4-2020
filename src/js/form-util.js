@@ -113,12 +113,11 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
     })
   })
 
-  Array.from(document.getElementsByClassName('openreason')).map(x=>x.addEventListener('click', async (event) => {
+  Array.from(document.getElementsByClassName('openreason')).map(x => x.addEventListener('click', async (event) => {
     event.preventDefault()
     if (event.currentTarget.nextElementSibling.classList.contains('d-none')) {
       event.currentTarget.nextElementSibling.classList.remove('d-none')
-    }
-	else {
+    } else {
       event.currentTarget.nextElementSibling.classList.add('d-none')
     }
   }))

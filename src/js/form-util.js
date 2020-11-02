@@ -135,11 +135,13 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
     }
 
     
-	const profile = getProfile(formInputs)
-	['address', 'birthday', 'city', 'firstname', 'lastname', 'placeofbirth', 'zipcode',].forEach(inputName => setPreviousFormValue(inputName, profile[inputName]))
-	setPreviousFormValue('reasons',reasons)
+    const profile = getProfile(formInputs)
+	const fields = ['lastname', 'firstname', 'birthday', 'placeofbirth', 'address', 'city', 'zipcode']
+
+    fields.forEach(inputName => setPreviousFormValue(inputName, profile[inputName]))
+    setPreviousFormValue('reasons',reasons)
 	
-	console.log(profile, reasons)
+    console.log(profile, reasons)
     const pdfBlob = await generatePdf(profile, reasons, pdfBase)
 
     const creationInstant = new Date()

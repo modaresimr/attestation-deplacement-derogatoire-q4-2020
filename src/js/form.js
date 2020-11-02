@@ -79,7 +79,7 @@ const createReasonField = (reasonData) => {
   const formReason = createElement('div', formReasonAttrs)
   const appendToReason = appendTo(formReason)
   const id = `checkbox-${reasonData.code}`
-  const reasons = getPreviousFormValue('reasons').split(', ')
+  const reasons = (getPreviousFormValue('reasons') || '').split(', ')
   const inputReasonAttrs = {
     className: 'form-check-input',
     type: 'checkbox',

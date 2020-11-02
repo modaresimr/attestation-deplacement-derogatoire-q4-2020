@@ -115,11 +115,11 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
 
   Array.from(document.getElementsByClassName('openreason')).map(x => x.addEventListener('click', async (event) => {
     event.preventDefault()
-    if (event.currentTarget.nextElementSibling.classList.contains('d-none')) {
+    const vis=event.currentTarget.nextElementSibling.classList.contains('d-none')
+    Array.from(document.getElementsByClassName('reasoninfo')).map(x => x.classList.add('d-none'))
+    if (vis) {
       event.currentTarget.nextElementSibling.classList.remove('d-none')
-    } else {
-      event.currentTarget.nextElementSibling.classList.add('d-none')
-    }
+    } 
   }))
 
   $('#generate-btn').addEventListener('click', async (event) => {

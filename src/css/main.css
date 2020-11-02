@@ -637,6 +637,13 @@ input[type=number] {
   transform: translateX(-50%);
 }
 
+#autourl-alert {
+  position: fixed;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .alert-info {
   color: #030494;
   background-color: #caf8ff;

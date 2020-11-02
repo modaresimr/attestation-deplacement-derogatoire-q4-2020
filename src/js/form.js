@@ -90,7 +90,7 @@ const createReasonField = (reasonData) => {
   }
   const inputReason = createElement('input', inputReasonAttrs)
 
-  const labelAttrs = { innerHTML: '<a href="#" class="openreason">' + reasonData.code + ' <div class="reasoninfo">' + reasonData.label + '</div></a>', className: 'form-checkbox-label', for: id }
+  const labelAttrs = { innerHTML: '<a href="#" class="openreason">' + reasonData.code + '</a> <div class="reasoninfo d-none">' + reasonData.label + '</div>', className: 'form-checkbox-label', for: id }
   const label = createElement('label', labelAttrs)
 
   appendToReason([inputReason, label])

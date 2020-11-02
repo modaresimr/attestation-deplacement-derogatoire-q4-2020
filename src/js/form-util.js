@@ -57,7 +57,7 @@ function validateAriaFields () {
 export function setReleaseDateTime (releaseDateInput) {
   const loadedDate = new Date()
   releaseDateInput.value = getFormattedDate(loadedDate)
-  $('#field-heuresortie').value = ("0" + loadedDate.getHours()).slice(-2) + ":" + ("0" + loadedDate.getMinutes()).slice(-2)
+  $('#field-heuresortie').value = ('0' + loadedDate.getHours()).slice(-2) + ':' + ('0' + loadedDate.getMinutes()).slice(-2)
 }
 
 export function getProfile (formInputs) {
@@ -115,8 +115,9 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
 
   $('.openreason').addEventListener('click', async (event) => {
     event.preventDefault()
-    $(this).find('reasoninfo').toggle()
+    $(this).nextElementSibling.classList.remove('d-none')
   })
+  
   $('#generate-btn').addEventListener('click', async (event) => {
     event.preventDefault()
 

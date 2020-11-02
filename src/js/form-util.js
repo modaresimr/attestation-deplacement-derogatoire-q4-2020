@@ -57,6 +57,7 @@ function validateAriaFields () {
 export function setReleaseDateTime (releaseDateInput) {
   const loadedDate = new Date()
   releaseDateInput.value = getFormattedDate(loadedDate)
+  $('#field-heuresortie').value = ("0" + loadedDate.getHours()).slice(-2) + ":" + ("0" + loadedDate.getMinutes()).slice(-2)
 }
 
 export function getProfile (formInputs) {
@@ -137,11 +138,11 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
 
     fields.forEach(inputName => setPreviousFormValue(inputName, profile[inputName]))
     setPreviousFormValue('reasons', reasons)
-    
-    window.location.hash = '#' + fields.map(x => x + '=' + profile[x]).join('&') + '&' + reasons.split(', ').map(x => 'reason=' + x).join('&')
+
+    window.location.hash = '#' + fields.map(x => x + '=' + profile[x]).join('&') + '&' + reasons.split(', ').map(x => 'reason=' + x).join('&') + '&autogenpdf=true'
     $('#autourl').attr('href', window.location.href)
     $('#autourl').html(window.location.href)
-	$('#autourl-alert').classList.remove('d-none')
+    $('#autourl-alert').classList.remove('d-none')
 
     console.log(profile, reasons)
     const pdfBlob = await generatePdf(profile, reasons, pdfBase)
